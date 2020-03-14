@@ -2,20 +2,6 @@
 
 ## Writeup
 
-### You can use this file as a template for your writeup if you want to submit it as a markdown file, but feel free to use some other method and submit a pdf if you prefer.
-
----
-
-**Build a Traffic Sign Recognition Project**
-
-The goals / steps of this project are the following:
-* Load the data set (see below for links to the project data set)
-* Explore, summarize and visualize the data set
-* Design, train and test a model architecture
-* Use the model to make predictions on new images
-* Analyze the softmax probabilities of the new images
-* Summarize the results with a written report
-
 
 [//]: # (Image References)
 
@@ -36,15 +22,12 @@ The goals / steps of this project are the following:
 
 #### 1. Provide a Writeup / README that includes all the rubric points and how you addressed each one. You can submit your writeup as markdown or pdf. You can use this template as a guide for writing the report. The submission includes the project code.
 
-You're reading it! and here is a link to my [project code](https://github.com/udacity/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb)
-A link to html output of the notebook [project notebook](https://github.com/udacity/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb)
+You're reading it! and here is a link to my [project code](https://github.com/ballon/german_signs/blob/master/Traffic_Sign_Classifier.ipynb)
+A link to html output of the notebook [project notebook](https://github.com/ballon/german_signs/blob/master/Traffic_Sign_Classifier.html)
 
 ### Data Set Summary & Exploration
 
 #### 1. Provide a basic summary of the data set. In the code, the analysis should be done using python, numpy and/or pandas methods rather than hardcoding results manually.
-
-I used the pandas library to calculate summary statistics of the traffic
-signs data set:
 
 Number of training examples = 34799
 Number of validation examples = 4410
@@ -57,6 +40,8 @@ Number of classes = 43
 Here is an exploratory visualization of the data set. It is a bar chart showing how the data labels distribution:
 ![alt text][image1]
 Some train dataset is not balanced are the data shows.
+
+Html document linked above should show examples of test/train images.
 
 ### Design and Test a Model Architecture
 
@@ -85,7 +70,7 @@ My final model consisted of the following layers:
 | Dropout rate=0.5   |
 | Fully connected		| 120 -> 84        									|
 | Fully connected		| 84 -> 43        									|
-| Softmax				| etc.        									|
+| Softmax				|        									|
 |						|												|
 |						|												|
  
@@ -102,22 +87,10 @@ Num of epochs is 20.
 
 My final model results were:
 * training set accuracy of 99%
-* validation set accuracy of 93.5%
-* test set accuracy of 90.6%
+* validation set accuracy of 93%
+* test set accuracy of 91.4%
 
-If an iterative approach was chosen:
-* What was the first architecture that was tried and why was it chosen?
-* What were some problems with the initial architecture?
-* How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
-* Which parameters were tuned? How were they adjusted and why?
-* What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
-
-If a well known architecture was chosen:
-* What architecture was chosen?
-* Why did you believe it would be relevant to the traffic sign application?
-* How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
-
-I used LeNet5 architecture modified just slightly by adding few dropout layers.
+I used LeNet5 architecture modified just slightly.
 This architecture has few convolution layers, so should be able to do classification task just well.
 The final validation accuracy is 93.5% and test accuracy is 90.6% which proves that model is reasonable well.
 The biggest issue if overfitting, I've added few layers of dropout and L2 loss to a cost function, that helped with overfitting a little, but didn't eliminated it completely.
